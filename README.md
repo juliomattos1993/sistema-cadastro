@@ -1,7 +1,7 @@
 # sistema-cadastro
 Sistema simples de cadastro de usuários desenvolvido com HTML, CSS e JavaScript. Projeto focado em manipulação de DOM e uso de LocalStorage.
 
-# Sistema de Cadastro de Usuários
+## Sistema de Cadastro de Usuários
 
 Projeto simples de cadastro de usuários desenvolvido com HTML, CSS e JavaScript.
 
@@ -9,7 +9,7 @@ Este projeto faz parte da minha jornada de aprendizado em desenvolvimento web e 
 
 ---
 
-# Funcionalidades
+## Funcionalidades
 
 -  Cadastro de nome e e-mail
 -  Listagem de usuários cadastrados
@@ -18,7 +18,7 @@ Este projeto faz parte da minha jornada de aprendizado em desenvolvimento web e 
 
 ---
 
- # Tecnologias Utilizadas
+ ## Tecnologias Utilizadas
 
 - HTML5
 - CSS3
@@ -48,7 +48,7 @@ Meu foco atual é aprender:
 
 ---
 
- Autor : 
+ ## Autor : 
 
 Desenvolvido por Julio cezar mattos
 
