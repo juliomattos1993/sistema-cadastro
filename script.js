@@ -18,13 +18,14 @@ function renderizar() {
         `;
         lista.appendChild(li);
     });
+    document.getElementById("contador").innerText =
+        `Total de usuários: ${usuarios.length}`;
 }
 
 function remover(index) {
     usuarios.splice(index, 1);
     salvarLocalStorage();
-    renderizar(document.getElementById("contador").innerText =
-    `Total de usuários: ${usuarios.length}`;);
+    renderizar();
 }
 
 form.addEventListener("submit", function(e) {
