@@ -1,56 +1,43 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f8;
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
+const form = document.getElementById("form");
+const lista = document.getElementById("lista");
+
+let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+function salvarLocalStorage() {
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
 }
 
-.container {
-    background: white;
-    padding: 20px;
-    width: 400px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+function renderizar() {
+    lista.innerHTML = "";
+
+    usuarios.forEach((usuario, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+            ${usuario.nome} - ${usuario.email}
+            <button onclick="remover(${index})">X</button>
+        `;
+        lista.appendChild(li);
+    });
 }
 
-h1 {
-    text-align: center;
+function remover(index) {
+    usuarios.splice(index, 1);
+    salvarLocalStorage();
+    renderizar();
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
 
-input {
-    padding: 8px;
-}
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
 
-button {
-    padding: 10px;
-    background: #0077b5;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
+    usuarios.push({ nome, email });
 
-button:hover {
-    background: #005f8d;
-}
+    salvarLocalStorage();
+    renderizar();
 
-ul {
-    margin-top: 20px;
-    list-style: none;
-    padding: 0;
-}
+    form.reset();
+});
 
-li {
-    display: flex;
-    justify-content: space-between;
-    background: #f0f0f0;
-    margin-bottom: 8px;
-    padding: 8px;
-    border-radius: 4px;
-}
+renderizar();
