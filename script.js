@@ -23,7 +23,8 @@ function renderizar() {
 function remover(index) {
     usuarios.splice(index, 1);
     salvarLocalStorage();
-    renderizar();
+    renderizar(document.getElementById("contador").innerText =
+    `Total de usuários: ${usuarios.length}`;);
 }
 
 form.addEventListener("submit", function(e) {
